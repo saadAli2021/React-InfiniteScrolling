@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Photo from "./Photo";
+
+const clientID = `?client_id=${process.env.REACT_APP_APIKEY}`;
+const url = "https://api.unsplash.com/photos/";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main className="MainSection">
+        <article className="search">
+          <input type="text" className="searchTF" />
+          <button className="searchBtn">Search</button>
+        </article>
+        <article className="photos">
+          <Photo />
+          <Photo />
+          <Photo />
+          <Photo />
+          <Photo />
+        </article>
+      </main>
     </div>
   );
 }
